@@ -1,0 +1,66 @@
+.banner-grid {
+  width: 320px;
+  height: 320px;
+}
+
+.banner-grid .main-div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.banner-grid .main-div .small-div {
+  width: 10px;
+  height: 10px;
+  float: left;
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-color: #f3f3f3;
+  box-shadow: 1px 1px 1px 1px #f9f9f9 inset;
+}
+
+.tooltip-row {
+  display: flex;
+  max-width: 600px;
+}
+
+.tooltip-column {
+  flex: 50%;
+  margin: 5px;
+  text-align: left;
+}
+
+.banner-grid-fp {
+  border-radius: 25px;
+}
+
+
+
+/* react css */
+.banner-grid-links a{
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+  text-decoration: none!important;
+}
+.nft_text_i {
+  background: #fff0;
+  color: #868686;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 0;
+  padding: 10px 0;
+}
+.rhap_container {
+  box-shadow: none!important;
+  background-color: #fff0 !important;
+}
