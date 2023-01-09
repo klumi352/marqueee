@@ -7,7 +7,7 @@ function FirstTab() {
    <>
     <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <h4>General</h4>
-                    <div className="accordion" id="accordionExample">
+                    <div className="accordion accordion-flush" id="accordionFlushExample">
                     {
                         ServiceData?.faqGeneral.map((data, index) => {
                             return (<SingleCollapse id={data.id} title={data.title} discription={data.discription} ishow={data.show} />)

@@ -558,6 +558,7 @@ select:focus{
     align-items: center;
 }
 .btn_visit{
+    min-width: 100px;
     cursor: pointer;
     text-decoration: none;
     color: #fff;

@@ -3,7 +3,7 @@ import Iframe from 'react-iframe'
 function VideoMain() {
     return (
         <>
-            <section className="section_three">
+            <section className="section_three" id="video-section-scroll">
                 <div className="container">
                     <h4 className="index_title">A Digital Billboard, Right at Your Fingertips</h4>
                     <p className="index_subtitle">The online economy has evolved – is your business keeping pace with the <br />

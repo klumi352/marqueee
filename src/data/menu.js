@@ -6,7 +6,7 @@ export const menu = [
     }, {
         id: 2,
         name: "HOW IT WORKS",
-        href:'/'
+        href:'/#how-it-work'
     }, {
         id: 3,
         name: "BLOG",

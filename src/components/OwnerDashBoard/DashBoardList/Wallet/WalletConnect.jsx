@@ -159,7 +159,7 @@ const WalletConnect = (props) => {
 
                     <VStack>
                       <Button onClick={signMessage} isDisabled={!message}>
-                        Sign Messagee
+                        Sign Message
                       </Button>
                       <div className='container'>
                         <Input

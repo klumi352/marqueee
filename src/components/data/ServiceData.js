@@ -207,42 +207,42 @@ const ServiceData = {
         {
             id:'123',
             title:'Can I transfer my MM NFT to another NFT marketplace, like GameStop?',
-            discription:'An NFT (non-fungible token) represents digital ownership of an asset, such as an image, video, or music file.',
+            discription:`Yes. <a href='/contact-us' target="_blank">Contact me</a> if you would like to do so, and I can make any improvements and make sure that everything's working here at Marquee.Market with your NFT marketplace of choice.`,
             show:true
         },{
             id:'124',
-            title:'What is an NFT?',
-            discription:'An NFT (non-fungible token) represents digital ownership of an asset, such as an image, video, or music file.',
+            title:'Is my data secure?',
+            discription:'Yes! We do not store sensitive information or passwords in our database, only public data. If a breach happens, no sensitive data will leak. In addition, backups are made daily. Your MM NFT is kept secure in your NFT wallet of choice. For write-access permissions at Marquee.Market, you must verify NFT ownership with your NFT wallet.',
             show:false
         },{
             id:'125',
-            title:'What is an NFT?',
-            discription:'An NFT (non-fungible token) represents digital ownership of an asset, such as an image, video, or music file.',
+            title:'If I have an idea or want to express an opinion about an idea, how should I do so?',
+            discription:'MM NFT owners have access to a priority contact form. You can also post topics in the NFT Owner Forum. Owners will then have the option to vote for the best ideas. The better the features, the more valuable your MM NFT is.',
             show:false
         },{
             id:'126',
-            title:'What is an NFT?',
-            discription:'An NFT (non-fungible token) represents digital ownership of an asset, such as an image, video, or music file.',
+            title:`I tried to log in with my GameStop or MetaMask wallet, but the incorrect wallet is loading. What's wrong?`,
+            discription:`Temporarily disable your default wallet; this is a known issue that I'm currently working on.`,
             show:false
         },{
             id:'127',
-            title:'What is an NFT?',
-            discription:'An NFT (non-fungible token) represents digital ownership of an asset, such as an image, video, or music file.',
+            title:'How does voting take place?',
+            discription:'For NFT OwnersWhenever the team at Marquee.Market or any MM NFT owner suggests good ideas, voting will take place in the NFT Owner Dashboard. MM NFT owners will receive an e-mail alert when this happens.',
             show:false
         },{
             id:'128',
-            title:'What is an NFT?',
-            discription:'An NFT (non-fungible token) represents digital ownership of an asset, such as an image, video, or music file.',
+            title:'I own an MM NFT, but I’m not on the NFT Owner List. Why not?',
+            discription:`For NFT Owners You must upload ads in the <a href='/owner-dashboard' target="_blank">NFT Owner Dashboard</a> in order to be included in the<a href='/owner-list' target="_blank"> NFT Owner List</a>.`,
             show:false
         },{
             id:'129',
-            title:'What is an NFT?',
-            discription:'An NFT (non-fungible token) represents digital ownership of an asset, such as an image, video, or music file.',
+            title:`Can I see how many visitors I'm getting from Marquee.Market?`,
+            discription:`For NFT Owners Yes. Go to your  <a href='/owner-dashboard' target="_blank">NFT Owner Dashboard</a>, and click on the “Manage NFT add” buttons on any of your MM NFTs. You will then see how much traffic you're receiving from Marquee.Market.`,
             show:false
         },{
             id:'130',
-            title:'What is an NFT?',
-            discription:'An NFT (non-fungible token) represents digital ownership of an asset, such as an image, video, or music file.',
+            title:`I'm unable to connect with my MetaMask or GameStop wallet on mobile. What's wrong?`,
+            discription:`To connect with MetaMask on your mobile device, use WalletConnect and choose MetaMask as your wallet of choice. GameStop wallet for mobile is not yet supported.`,
             show:false
         },
     ]

@@ -1,7 +1,8 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 function BannerLeft() {
     const [eth_usd,seteth_usd]=useState()
     const getETHPrice = async () => {
@@ -32,7 +33,7 @@ function BannerLeft() {
 
                     {eth_usd !== 0 && (<p className="banner_subtitle">1,024 of 1,024 NFT ads available <br />Current price of ETH: <b>{eth_usd} USD</b></p>)}
 
-                <a href="#" className="btn_banner">Buy MM NFT</a>
+                <div className='banner-btns'><Link to="/purchase" className="btn_banner">Buy MM NFT</Link><HashLink to="#video-section-scroll" class="btn_play"><i class="fa-solid fa-circle-play"></i>Watch Video </HashLink></div>
             </div>
         </>
     )

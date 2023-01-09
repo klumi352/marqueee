@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import {HashLink as Link} from 'react-router-hash-link';
 import Logo from '../../Assets/images/logo/logo_footer.svg'
 import { menu } from '../../data/menu'
 import LogoMain from '../Logo/LogoMain'
@@ -33,8 +33,14 @@ function NavBarMain() {
                     <ul class="navbar-nav ms-auto">
                         {
                             menu?.map((data) => {
-                                console.log(data.href)
-                                return (<NavLinkMenu key={data.id} name={data.name} href={data.href} />)
+                                if(data.id===2){
+                                  return(  <li className="nav-item" key={data.id}>
+                                  <Link to={data.href} className="nav-link" >{data.name}</Link>
+                             </li>)
+                                }else{
+                                    return (<NavLinkMenu key={data.id} name={data.name} href={data.href} />)
+                                }
+                                
                             })
                         }
                     </ul>

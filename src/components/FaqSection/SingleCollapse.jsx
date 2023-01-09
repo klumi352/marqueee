@@ -1,18 +1,16 @@
 import React from 'react'
 
-function SingleCollapse({id,title,discription,ishow}) {
+function SingleCollapse({ id, title, discription, ishow }) {
     return (
         <>
             <div className="accordion-item">
-                <h2 className="accordion-header" id={`headingOne${id}`}>
-                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#abc${id}`} aria-expanded="true" aria-controls="collapseOne">
+                <h2 className="accordion-header" id={`flush-heading${id}`}>
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#flush-collapse${id}`} aria-expanded="false" aria-controls="flush-collapseOne">
                         {title}
                     </button>
                 </h2>
-                <div id={`abc${id}`} className={`accordion-collapse collapse ${ishow?'show':null}`} aria-labelledby={`headingOne${id}`} data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
-                        <p dangerouslySetInnerHTML={{__html: discription}}></p>
-                    </div>
+                <div id={`flush-collapse${id}`} className={`accordion-collapse collapse ${ishow?'show':null}`} aria-labelledby={`flush-heading${id}`} data-bs-parent="#accordionFlushExample">
+                    <div className="accordion-body" dangerouslySetInnerHTML={{ __html: discription }}></div>
                 </div>
             </div>
         </>

@@ -52,7 +52,7 @@ const Purchase = () => {
   let end = (page + 2 > NUM_PAGES - 1) ? NUM_PAGES - 1 : start + 4;
   let rows = [];
   for (let i = start; i <= end; i++) {
-    rows.push(<li key={i} className="page-item"><a className="page-link" href="/#/Purchase" onClick={() => retrievePage(i)}>{(i + 1)}</a></li>);
+    rows.push(<li key={i} className="page-item"><a className="page-link"  onClick={() => retrievePage(i)}>{(i + 1)}</a></li>);
   }
 
   return (
@@ -70,16 +70,16 @@ const Purchase = () => {
               <nav aria-label="Page navigation example">
                 <ul className="pagination">
                   {page !== 0 && (
-                    <li className="page-item"><a className="page-link" href="/#/Purchase" onClick={() => retrievePage(0)}>First</a></li>
+                    <li className="page-item"><a className="page-link"  onClick={() => retrievePage(0)}>First</a></li>
                   )}
                   {page > 0 && (
-                    <li className="page-item"><a className="page-link" href="/#/Purchase" onClick={() => retrievePage(page - 1)}>Previous</a></li>
+                    <li className="page-item"><a className="page-link"  onClick={() => retrievePage(page - 1)}>Previous</a></li>
                   )}
                   {rows}
                   {page !== NUM_PAGES - 1 && (
                     <>
-                      <li className="page-item"><a className="page-link" href="/#/Purchase" onClick={() => retrievePage(page + 1)}>Next</a></li>
-                      <li className="page-item"><a className="page-link" href="/#/Purchase" onClick={() => retrievePage(NUM_PAGES - 1)}>Last</a></li>
+                      <li className="page-item"><a className="page-link"  onClick={() => retrievePage(page + 1)}>Next</a></li>
+                      <li className="page-item"><a className="page-link"  onClick={() => retrievePage(NUM_PAGES - 1)}>Last</a></li>
                     </>
                   )}
                 </ul> Page: {page + 1}
@@ -126,16 +126,16 @@ const Purchase = () => {
               <nav aria-label="Page navigation example">
                 <ul className="pagination">
                   {page !== 0 && (
-                    <li className="page-item"><a className="page-link" href="/#/Purchase" onClick={() => retrievePage(0)}>First</a></li>
+                    <li className="page-item"><a className="page-link"  onClick={() => retrievePage(0)}>First</a></li>
                   )}
                   {page > 0 && (
-                    <li className="page-item"><a className="page-link" href="/#/Purchase" onClick={() => retrievePage(page - 1)}>Previous</a></li>
+                    <li className="page-item"><a className="page-link"  onClick={() => retrievePage(page - 1)}>Previous</a></li>
                   )}
                   {rows}
                   {page !== NUM_PAGES - 1 && (
                     <>
-                      <li className="page-item"><a className="page-link" href="/#/Purchase" onClick={() => retrievePage(page + 1)}>Next</a></li>
-                      <li className="page-item"><a className="page-link" href="/#/Purchase" onClick={() => retrievePage(NUM_PAGES - 1)}>Last</a></li>
+                      <li className="page-item"><a className="page-link"  onClick={() => retrievePage(page + 1)}>Next</a></li>
+                      <li className="page-item"><a className="page-link"  onClick={() => retrievePage(NUM_PAGES - 1)}>Last</a></li>
                     </>
                   )}
                 </ul> Page: {page + 1}

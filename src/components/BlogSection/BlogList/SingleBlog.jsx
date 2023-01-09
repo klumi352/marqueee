@@ -9,7 +9,7 @@ function SingleBlog({title,date,month,year,image,discription,slug}) {
                     <h3>{title}</h3>
                     <ul class="blog_ul">
                         <li><i class="icofont-ui-calendar"></i>{`${month} ${date} ${year}`}</li>
-                        <li><a href="#"><i class="icofont-share-boxed"></i> Share</a></li>
+                        {/* <li><a href="#"><i class="icofont-share-boxed"></i> Share</a></li> */}
                     </ul>
                 </div>
                 <div class="blog_img">

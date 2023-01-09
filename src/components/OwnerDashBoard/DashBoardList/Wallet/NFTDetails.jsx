@@ -18,7 +18,7 @@ import FileBase64 from 'react-file-base64';
 import { truncateAddress } from "../../../../utils";
 import { useStateWithCallbackLazy } from 'use-state-with-callback';
 import DeleteBannerAd from "./DeleteBannerAd";
-
+import trashIcon from '../../../../Assets/images/delete.png'
 const NFTDetails = (props) => {
   const [loader, setLoader] = useState(true);
   const [assets, setAsset] = useState([]);
@@ -308,68 +308,67 @@ const NFTDetails = (props) => {
             {props.account && (
               <>
                 <div className='container'>
-                <div className='table-responsive'>
-                  <table className="table nft_table">
-                    <thead>
-                      <tr>
-                        <th scope="col">No.</th>
-                        <th scope="col">NFT</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Color Hex Code</th>
-                        <th scope="col">Token ID</th>
-                        <th scope="col">Total Unique Visits</th>
-                        <th scope="col">Sell</th>
-                        {title && description && url && (
-                          <th scope="col">Delete</th>
-                        )}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {assets.map((asset, i) => (
-                        <tr key={i}>
-                          {asset.traits.map((trait, j) => (
-                            <>
-                              {trait.trait_type.toLowerCase() === "editionnumber" && (
-                                <>
-                                  {/* {id = trait.value, <th scope="row" key={j}>{id}</th>} */}
-                                  {id = trait.value && <th scope="row" key={j}>{id}</th>}
-                                </>
-                              )}
-                            </>
-                          ))}
-                          <td><img src={asset.image_thumbnail_url} /></td>
-                          <td>{asset.name}</td>
-                          {asset.traits.map((trait, k) => (
-                            <>
-                              {trait.trait_type.toLowerCase() === "colorhexcode" && (
-                                <>
-                                  <td key={'chc' + k}>
-                                    <div className="colorBox" style={{ background: trait.value }}></div>&emsp;
-                                    {trait.value}
-                                  </td>
-                                </>
-                              )}
-                            </>
-                          ))}
-                          <td><Tooltip label={asset.token_id} placement="right">{truncateAddress(asset.token_id)}</Tooltip></td>
-                          {/* <td><NumberFormatBase value={visits} displayType={'text'} thousandSeparator={true} /></td> */}
-                          <td></td>
-                          <td>
-                            <ButtonGroup variant='outline' spacing='6' padding='10px'>
-                              <Button onClick={() => window.open(asset.permalink + '/sell')} colorScheme='blue'>Sell NFT</Button>
-                            </ButtonGroup>
-                          </td>
+                  <div className='table-responsive'>
+                    <table className="table nft_table">
+                      <thead>
+                        <tr>
+                          <th scope="col">No..</th>
+                          <th scope="col">NFT</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Color Hex Code</th>
+                          <th scope="col">Token ID</th>
+                          <th scope="col">Total Unique Visits</th>
+                          <th scope="col">Sell</th>
                           {title && description && url && (
-                            <td>
-                              <Tooltip label='Delete ad details and banner ads'>
-                                <a href="/#/Dashboard" onClick={(e) => openModal(e, asset.name, id, asset.token_id)}><img src={process.env.REACT_APP_MARQUEE_URL + "/delete.png"} /></a>
-                              </Tooltip>
-                            </td>
+                            <th scope="col">Delete</th>
                           )}
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody>
+                        {assets.map((asset, i) => (
+                          <tr key={i}>
+                            {asset.traits.map((trait, j) => (
+                              <>
+                                {trait.trait_type.toLowerCase() === "editionnumber" && (
+                                  <>
+                                    {id = trait.value, <th scope="row" key={j}>{id}</th>}
+                                  </>
+                                )}
+                              </>
+                            ))}
+                            <td><img src={asset.image_thumbnail_url} /></td>
+                            <td>{asset.name}</td>
+                            {asset.traits.map((trait, k) => (
+                              <>
+                                {trait.trait_type.toLowerCase() === "colorhexcode" && (
+                                  <>
+                                    <td key={'chc' + k}>
+                                      <div className="colorBox" style={{ background: trait.value }}></div>&emsp;
+                                      {trait.value}
+                                    </td>
+                                  </>
+                                )}
+                              </>
+                            ))}
+                            <td><Tooltip label={asset.token_id} placement="right">{truncateAddress(asset.token_id)}</Tooltip></td>
+                            {/* <td><NumberFormatBase value={visits} displayType={'text'} thousandSeparator={true} /></td> */}
+                            <td></td>
+                            <td>
+                              <ButtonGroup variant='outline' spacing='6' padding='10px'>
+                                <Button onClick={() => window.open(asset.permalink + '/sell')} colorScheme='blue'>Sell NFT</Button>
+                              </ButtonGroup>
+                            </td>
+                            {title && description && url && (
+                              <td>
+                                <Tooltip label='Delete ad details and banner ads'>
+                                  <a  href="/owner-dashboard" onClick={(e) => openModal(e, asset.name, id, asset.token_id)}><img  style={{width:'25px',height:'25px'}} src={trashIcon} /></a>
+                                </Tooltip>
+                              </td>
+                            )}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
                 </div>
                 <Tabs>

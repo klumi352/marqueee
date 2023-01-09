@@ -213,7 +213,7 @@ function OwnerListMain() {
 
                                 <div className="nft_embed">
                                     <label for="email" className="form-label">Embed</label>
-                                    <input type="email" className="form-control" id="email" value="<script src='https://marquee.market/marqu'></script>" name="email" />
+                                    <input type="email" className="form-control" id="email" value="<script src='https://marquee.market/marquee.js?type=3'></script>" name="email" />
                                 </div>
                             </div>
                         </div>

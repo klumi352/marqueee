@@ -28,6 +28,7 @@ function App() {
         <Route path="/blog-list" ><BlogList /></Route>
         <Route path="/blog/:slug" ><SingleBlog /></Route>
         <Route path="/Forum" ><BuyNftForum /></Route>
+        <Route path="/Forum/Edit" ><BuyNftForum /></Route>
         <Route path="/purchase" ><BuyMMNFT /></Route>
         <Route path="/contact-us" ><Contactus /></Route>
         <Route path="/about" ><About /></Route>

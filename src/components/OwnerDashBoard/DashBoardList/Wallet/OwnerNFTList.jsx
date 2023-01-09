@@ -13,6 +13,7 @@ import { truncateAddress } from "../../../../utils";
 import DeleteBannerAd from "./DeleteBannerAd";
 import ListHeader from '../ListHeader'
 import loadingGif from '../../../../Assets/images/loading.gif'
+import trashIcon from '../../../../Assets/images/delete.png'
 const OwnerNFTList = (props) => {
     const [loader, setLoader] = useState(true);
     const [assets, setAsset] = useState([]);
@@ -132,46 +133,47 @@ const OwnerNFTList = (props) => {
                                                             <tbody>
                                                                 {assets.map((asset, i) => {
                                                                     console.log(asset)
-                                                                    return(
-                                                                    <>
-                                                                        <tr key={i}>
-                                                                            {asset.traits.map((trait, j) => (
-                                                                                <>
-                                                                                    {trait.trait_type.toLowerCase() === "editionnumber" && (
-                                                                                        <>
-                                                                                            {id[i] = trait.value && <th scope="row" key={j}>{id[i]}</th>}
-                                                                                        </>
-                                                                                    )}
-                                                                                </>
-                                                                            ))}
-                                                                            <td><img src={asset.image_thumbnail_url} /></td>
-                                                                            <td>{asset.name}</td>
-                                                                            {asset.traits.map((trait, k) => (
-                                                                                <>
-                                                                                    {trait.trait_type.toLowerCase() === "colorhexcode" && (
-                                                                                        <>
-                                                                                            <td key={'chc' + k}>
-                                                                                                <div className="nft_color_main">
-                                                                                                    <div className="nft_color" style={{ background: trait.value }}></div>
-                                                                                                    <span> {trait.value}</span>
-                                                                                                </div>
-                                                                                            </td>
-                                                                                        </>
-                                                                                    )}
-                                                                                </>
-                                                                            ))}
-                                                                            <td><Tooltip label={asset.token_id} placement="right">{truncateAddress(asset.token_id)}</Tooltip></td>
-                                                                            <td>
-                                                                                <ButtonGroup variant='outline' spacing='6' padding='10px'>
-                                                                                    <Link to={"/Dashboard/" + asset.token_id}>
-                                                                                        <Button colorScheme='blue'>Manage NFT Ad</Button>
-                                                                                    </Link>
-                                                                                </ButtonGroup>
-                                                                            </td>
-                                                                            <td>{delIds.includes(parseInt(id[i])) && (<a className="btn_visit" href="/#/Dashboard" onClick={(e) => openModal(e, asset.name, id[i], asset.token_id)}><img src={process.env.REACT_APP_MARQUEE_URL + "/delete.png"} /></a>)}</td>
-                                                                        </tr>
-                                                                    </>
-                                                                )})}
+                                                                    return (
+                                                                        <>
+                                                                            <tr key={i}>
+                                                                                {asset.traits.map((trait, j) => (
+                                                                                    <>
+                                                                                        {trait.trait_type.toLowerCase() === "editionnumber" && (
+                                                                                            <>
+                                                                                                {id[i] = trait.value, <th scope="row" key={j}>{id[i]}</th>}
+                                                                                            </>
+                                                                                        )}
+                                                                                    </>
+                                                                                ))}
+                                                                                <td><img src={asset.image_thumbnail_url} /></td>
+                                                                                <td>{asset.name}</td>
+                                                                                {asset.traits.map((trait, k) => (
+                                                                                    <>
+                                                                                        {trait.trait_type.toLowerCase() === "colorhexcode" && (
+                                                                                            <>
+                                                                                                <td key={'chc' + k}>
+                                                                                                    <div className="nft_color_main">
+                                                                                                        <div className="nft_color" style={{ background: trait.value }}></div>
+                                                                                                        <span> {trait.value}</span>
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                            </>
+                                                                                        )}
+                                                                                    </>
+                                                                                ))}
+                                                                                <td><Tooltip label={asset.token_id} placement="right">{truncateAddress(asset.token_id)}</Tooltip></td>
+                                                                                <td>
+                                                                                    <ButtonGroup variant='outline' spacing='6' padding='10px'>
+                                                                                        <Link to={"/Dashboard/" + asset.token_id}>
+                                                                                            <Button colorScheme='blue'>Manage NFT Ad</Button>
+                                                                                        </Link>
+                                                                                    </ButtonGroup>
+                                                                                </td>
+                                                                                <td>{delIds.includes(parseInt(id[i])) && (<a className="btn_visit" href="/owner-dashboard" onClick={(e) => openModal(e, asset.name, id[i], asset.token_id)}><img style={{width:'25px',height:'25px'}} src={trashIcon} /></a>)}</td>
+                                                                            </tr>
+                                                                        </>
+                                                                    )
+                                                                })}
                                                             </tbody>
                                                         </table>
                                                     </div>

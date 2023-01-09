@@ -5,8 +5,8 @@ import Cards from './Cards'
 function FirstSectionMain() {
     return (
         <>
-            <section className="section_two">
-                <div className="container">
+            <section  className="section_two" id="how-it-work">
+                <div className="container" >
                     <h4 className="index_title">There’s A Smarter Way To Attract New Leads Online.</h4>
                     <p className="index_subtitle">Access the end-to-end ad campaign control you deserve with Marquee Market.</p>
 
