@@ -21,7 +21,7 @@ function BannerMain() {
 
 						<div className="col-md-12 col-lg-5">
 							<div className="nft_player">
-								<div style={{ background: `url(${Bannerleft})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'top ' }}>
+								<div style={{ background: `url(${Bannerleft})`,minHeight: '690px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'top ' }}>
 
 									<ul className="nav nav-pills index_tab_menu nft_dash_tab" id="myTab2"
 										role="tablist">

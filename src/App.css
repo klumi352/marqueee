@@ -1967,6 +1967,9 @@ banner-grid-links p {
 .navbar-brand:hover{
   color: #fff !important;
   }
+  .navbar-brand:focus{
+    color: #fff !important;
+    }
 .blog_footer{
   display: block !important;
 }
@@ -1976,3 +1979,6 @@ banner-grid-links p {
 .blog_footer .blog-share{
   color: #000 !important;
 }
+.banner-grid-links p{
+  margin-bottom:0;
+  }
