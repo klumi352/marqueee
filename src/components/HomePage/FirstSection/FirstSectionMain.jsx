@@ -1,7 +1,7 @@
 import React from 'react'
 import { homefirst } from '../../../data/Home'
 import Cards from './Cards'
-
+import { HashLink } from 'react-router-hash-link';
 function FirstSectionMain() {
     return (
         <>
@@ -20,7 +20,7 @@ function FirstSectionMain() {
                         }
                     </div>
                     <div className="btn_learn_more">
-                        <a href="#">Learn More</a>
+                        <HashLink to="/blog/Marquee_Market_has_Launched#">Learn More</HashLink>
                     </div>
                 </div>
             </section>
