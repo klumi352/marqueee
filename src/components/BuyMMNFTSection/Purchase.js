@@ -97,13 +97,14 @@ const Purchase = () => {
                           <>
                             {trait.trait_type.toLowerCase() === "editionnumber" && (
                               <>
-                                <th scope="row" key={'en' + j}>{trait.value}</th>
+                                <td scope="row" key={'en' + j}><span className="tbl_mobile_title">No. :</span> {trait.value}</td>
                               </>
                             )}
                           </>
                         ))}
+
                         <td><img src={asset.image_thumbnail_url} /></td>
-                        <td>{asset.name}</td>
+                        <td><span className="tbl_mobile_title">NFT Name :</span> {asset.name}</td>
 
                         {asset.traits.map((trait, k) => (
                           <>
@@ -111,6 +112,7 @@ const Purchase = () => {
                               <>
                                 <td key={'chc' + k}>
                                   <div className="nft_color_main">
+                                  <span className="tbl_mobile_title">Color Hex Code : </span>
                                     <div className="nft_color" style={{ background: trait.value }}></div>&emsp;
                                     {trait.value}
                                   </div>
@@ -119,31 +121,35 @@ const Purchase = () => {
                             )}
                           </>
                         ))}
-                        <td><Tooltip label={asset.token_id} placement="right">{truncateAddress(asset.token_id)}</Tooltip></td>
+                        <td><span className="tbl_mobile_title">Token ID : </span> <Tooltip label={asset.token_id} placement="right">{truncateAddress(asset.token_id)}</Tooltip></td>
+                        {/* <td><span className="tbl_mobile_title">Total Unique Visits : </span>500</td> */}
                         <td><a className="btn_visit" onClick={() => window.open(asset.permalink)}>Purchase</a></td>
                       </tr>
+
+
                     ))}
+
                   </tbody>
                 </table>
               </div>
               <div className='container page-link-center'>
-              <nav aria-label="Page navigation example">
-                <ul className="pagination">
-                  {page !== 0 && (
-                    <li className="page-item"><a className="page-link" onClick={() => retrievePage(0)}>First</a></li>
-                  )}
-                  {page > 0 && (
-                    <li className="page-item"><a className="page-link" onClick={() => retrievePage(page - 1)}>Previous</a></li>
-                  )}
-                  {rows}
-                  {page !== NUM_PAGES - 1 && (
-                    <>
-                      <li className="page-item"><a className="page-link" onClick={() => retrievePage(page + 1)}>Next</a></li>
-                      <li className="page-item"><a className="page-link" onClick={() => retrievePage(NUM_PAGES - 1)}>Last</a></li>
-                    </>
-                  )}
-                </ul> Page: {page + 1}
-              </nav>
+                <nav aria-label="Page navigation example">
+                  <ul className="pagination">
+                    {page !== 0 && (
+                      <li className="page-item"><a className="page-link" onClick={() => retrievePage(0)}>First</a></li>
+                    )}
+                    {page > 0 && (
+                      <li className="page-item"><a className="page-link" onClick={() => retrievePage(page - 1)}>Previous</a></li>
+                    )}
+                    {rows}
+                    {page !== NUM_PAGES - 1 && (
+                      <>
+                        <li className="page-item"><a className="page-link" onClick={() => retrievePage(page + 1)}>Next</a></li>
+                        <li className="page-item"><a className="page-link" onClick={() => retrievePage(NUM_PAGES - 1)}>Last</a></li>
+                      </>
+                    )}
+                  </ul> Page: {page + 1}
+                </nav>
               </div>
               {/*<Text><pre>{JSON.stringify(assets, null, "\t")}</pre></Text>*/}
             </>

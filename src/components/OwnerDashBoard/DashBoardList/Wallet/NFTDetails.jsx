@@ -331,26 +331,29 @@ const NFTDetails = (props) => {
                               <>
                                 {trait.trait_type.toLowerCase() === "editionnumber" && (
                                   <>
-                                    {id = trait.value, <th scope="row" key={j}>{id}</th>}
+                                    <td scope="row" key={'en' + j}><span className="tbl_mobile_title">No. :</span> {trait.value}</td>
                                   </>
                                 )}
                               </>
                             ))}
                             <td><img src={asset.image_thumbnail_url} /></td>
-                            <td>{asset.name}</td>
+                            <td><span className="tbl_mobile_title">Name : </span>{asset.name}</td>
                             {asset.traits.map((trait, k) => (
                               <>
                                 {trait.trait_type.toLowerCase() === "colorhexcode" && (
                                   <>
                                     <td key={'chc' + k}>
-                                      <div className="colorBox" style={{ background: trait.value }}></div>&emsp;
-                                      {trait.value}
+                                      <div className="nft_color_main">
+                                        <span className="tbl_mobile_title">Color Hex Code : </span>
+                                        <div className="nft_color" style={{ background: trait.value }}></div>
+                                        <span> {trait.value}</span>
+                                      </div>
                                     </td>
                                   </>
                                 )}
                               </>
                             ))}
-                            <td><Tooltip label={asset.token_id} placement="right">{truncateAddress(asset.token_id)}</Tooltip></td>
+                            <td><span className="tbl_mobile_title">Token ID : </span><Tooltip label={asset.token_id} placement="right">{truncateAddress(asset.token_id)}</Tooltip></td>
                             {/* <td><NumberFormatBase value={visits} displayType={'text'} thousandSeparator={true} /></td> */}
                             <td></td>
                             <td>
@@ -361,7 +364,7 @@ const NFTDetails = (props) => {
                             {title && description && url && (
                               <td>
                                 <Tooltip label='Delete ad details and banner ads'>
-                                  <a  href="/owner-dashboard" onClick={(e) => openModal(e, asset.name, id, asset.token_id)}><img  style={{width:'25px',height:'25px'}} src={trashIcon} /></a>
+                                  <a href="/owner-dashboard" onClick={(e) => openModal(e, asset.name, id, asset.token_id)}><img style={{ width: '25px', height: '25px' }} src={trashIcon} /></a>
                                 </Tooltip>
                               </td>
                             )}

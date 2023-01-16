@@ -140,19 +140,20 @@ const OwnerNFTList = (props) => {
                                                                                     <>
                                                                                         {trait.trait_type.toLowerCase() === "editionnumber" && (
                                                                                             <>
-                                                                                                {id[i] = trait.value, <th scope="row" key={j}>{id[i]}</th>}
+                                                                                                <td scope="row" key={'en' + j}><span className="tbl_mobile_title">No. :</span> {trait.value}</td>
                                                                                             </>
                                                                                         )}
                                                                                     </>
                                                                                 ))}
                                                                                 <td><img src={asset.image_thumbnail_url} /></td>
-                                                                                <td>{asset.name}</td>
+                                                                                <td> <span className="tbl_mobile_title">Name : </span>{asset.name}</td>
                                                                                 {asset.traits.map((trait, k) => (
                                                                                     <>
                                                                                         {trait.trait_type.toLowerCase() === "colorhexcode" && (
                                                                                             <>
                                                                                                 <td key={'chc' + k}>
                                                                                                     <div className="nft_color_main">
+                                                                                                    <span className="tbl_mobile_title">Color Hex Code : </span>
                                                                                                         <div className="nft_color" style={{ background: trait.value }}></div>
                                                                                                         <span> {trait.value}</span>
                                                                                                     </div>
@@ -161,8 +162,9 @@ const OwnerNFTList = (props) => {
                                                                                         )}
                                                                                     </>
                                                                                 ))}
-                                                                                <td><Tooltip label={asset.token_id} placement="right">{truncateAddress(asset.token_id)}</Tooltip></td>
+                                                                                <td><span className="tbl_mobile_title">Token ID : </span><Tooltip label={asset.token_id} placement="right">{truncateAddress(asset.token_id)}</Tooltip></td>
                                                                                 <td>
+                                                                    
                                                                                     <ButtonGroup variant='outline' spacing='6' padding='10px'>
                                                                                         <Link to={"/Dashboard/" + asset.token_id}>
                                                                                             <Button colorScheme='blue'>Manage NFT Ad</Button>
@@ -180,19 +182,16 @@ const OwnerNFTList = (props) => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='container page-link-center'>
-                                            <nav aria-label="Page navigation example">
+                                        <nav aria-label="Page navigation example">
                                             <ul className="pagination">
                                                 {previous && (
-                                                    <li className="page-item"><a className="page-link" onClick={() => retrievePage(previous)}>Previous</a></li>
+                                                    <li className="page-item"><a className="page-link" href="/#/Dashboard" onClick={() => retrievePage(previous)}>Previous</a></li>
                                                 )}
                                                 {next && (
-                                                    <li className="page-item"><a className="page-link"  onClick={() => retrievePage(next)}>Next</a></li>
+                                                    <li className="page-item"><a className="page-link" href="/#/Dashboard" onClick={() => retrievePage(next)}>Next</a></li>
                                                 )}
                                             </ul>
                                         </nav>
-                                        </div>
-                                        
                                     </>
                                 ) : (
                                     <>

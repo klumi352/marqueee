@@ -149,21 +149,23 @@ function OwnerListMain() {
                                                 <tbody>
                                                     {list.map((owner, i) => (
                                                         <tr key={i}>
-                                                            <td>{owner.banner_grid_id}</td>
+                                                            <td><span className="tbl_mobile_title">No. :</span>{owner.banner_grid_id}</td>
                                                             <td><img src={process.env.REACT_APP_MARQUEE_URL + "/api/banner_image.php?token_id=" + owner.token_id + "&type=thumb"} alt="" /></td>
-                                                            <td>{owner.nft_name}</td>
+                                                            <td><span className="tbl_mobile_title">Name : </span>{owner.nft_name}</td>
                                                             <td>
                                                                 <div className="nft_color_main">
+                                                                <span className="tbl_mobile_title">Color Hex Code : </span>
                                                                     <div className="nft_color" style={{ background: owner.color_hex_code }}></div>
                                                                     <span>{owner.color_hex_code}</span>
                                                                 </div>
                                                             </td>
                                                             <td>
+                                                            <span className="tbl_mobile_title">Description : </span>
                                                                 <span className="textBold">{owner.title}</span>
                                                                 <p>{owner.description}</p>
                                                             </td>
-                                                            <td><Tooltip label={owner.token_id} placement="right">{truncateAddress(owner.token_id)}</Tooltip></td>
-                                                            <td><NumberFormat value={owner.visits} displayType={'text'} thousandSeparator={true} /></td>
+                                                            <td><span className="tbl_mobile_title">Token ID : </span><Tooltip label={owner.token_id} placement="right">{truncateAddress(owner.token_id)}</Tooltip></td>
+                                                            <td><span className="tbl_mobile_title">Total Unique Visits : </span><NumberFormat value={owner.visits} displayType={'text'} thousandSeparator={true} /></td>
                                                             <td><a className="btn_visit" onClick={(e) => visitSite(e, owner.id, owner.url)}>Visit Site</a></td>
                                                         </tr>
                                                     ))}

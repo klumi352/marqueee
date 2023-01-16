@@ -2001,7 +2001,70 @@ banner-grid-links p {
 .logo_slogan {
   font-size: 14px !important;
 }
-.page-link-center{
+
+.page-link-center {
   display: flex;
   justify-content: center;
+}
+
+
+.tbl_mobile_title {
+  display: none;
+}
+
+@media only screen and (max-width : 768px) {
+  .nft_table {
+    min-width: 100% !important;
+  }
+
+  .nft_table tr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nft_table tr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nft_table td {
+    border-bottom: 1px solid silver;
+  }
+
+  .nft_table td:nth-child(1) {
+    border: 0;
+  }
+
+  .nft_table td:nth-child(2) {
+    border: 0;
+  }
+
+  .nft_table td:nth-last-child(1) {
+    border: 0;
+  }
+
+  .nft_table td:first-child {
+    text-align: left;
+  }
+
+  .nft_table th:first-child {
+    text-align: left !important;
+    width: 100%;
+  }
+
+  .nft_table th {
+    display: none;
+  }
+
+  .nft_table .tbl_mobile_title {
+    font-weight: 600;
+    margin-right: 10px;
+    display: inline-block;
+  }
+
+  .nft_table p {
+    margin: 0;
+  }
 }
