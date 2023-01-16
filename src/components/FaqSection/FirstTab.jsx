@@ -10,7 +10,7 @@ function FirstTab() {
                     <div className="accordion accordion-flush" id="accordionFlushExample">
                     {
                         ServiceData?.faqGeneral.map((data, index) => {
-                            return (<SingleCollapse id={data.id} title={data.title} discription={data.discription} ishow={data.show} />)
+                            return (<SingleCollapse id={data.id} title={data.title} discription={data.discription} ishow={data.show} databsparent={'accordionFlushExample'}  />)
                         })
                     }
                     </div>

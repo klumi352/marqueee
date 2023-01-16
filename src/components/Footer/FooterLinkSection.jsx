@@ -15,7 +15,7 @@ function FooterLinkSection() {
                             <li><HashLink to="/#">Home</HashLink></li>
                             <li><HashLink to="/#how-it-work">How It Works</HashLink></li>
                             <li><HashLink to="/contact-us#">Contact Us</HashLink></li>
-                            <li><HashLink to="/about3">About Us</HashLink></li>
+                            <li><HashLink to="/about#">About Us</HashLink></li>
                         </ul>
                     </div>
                     <div className="col-6 col-md-3 col-lg-2">

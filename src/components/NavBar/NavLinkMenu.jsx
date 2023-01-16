@@ -1,11 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link';
 
 function NavLinkMenu({key,href,name}) {
     return (
         <>
             <li className="nav-item" key={key}>
-                <NavLink to={href} className="nav-link" >{name}</NavLink>
+                <HashLink to={href} className="nav-link" >{name}</HashLink>
             </li>
         </>
     )

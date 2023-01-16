@@ -1960,28 +1960,48 @@ banner-grid-links p {
   .btn_play {
     margin: 15px;
   }
+
   .blog_footer p {
     font-size: 12px;
   }
-  .home-btn-center{
+
+  .home-btn-center {
     text-align: center;
   }
-}
-.navbar-brand:hover{
-  color: #fff !important;
+
+  .page-link {
+    padding: 10px;
   }
-  .navbar-brand:focus{
-    color: #fff !important;
-    }
-.blog_footer{
+}
+
+.navbar-brand:hover {
+  color: #fff !important;
+}
+
+.navbar-brand:focus {
+  color: #fff !important;
+}
+
+.blog_footer {
   display: block !important;
 }
+
 .blog_footer p {
   color: #fff !important;
 }
-.blog_footer .blog-share{
+
+.blog_footer .blog-share {
   color: #000 !important;
 }
-.banner-grid-links p{
-  margin-bottom:0;
-  }
+
+.banner-grid-links p {
+  margin-bottom: 0;
+}
+
+.logo_slogan {
+  font-size: 14px !important;
+}
+.page-link-center{
+  display: flex;
+  justify-content: center;
+}

@@ -99,12 +99,12 @@ function OwnerListMain() {
         setPage(0);
         if (data.target.value === "1") {
             setRandTitle("Random");
-            setRand(0, () => {
+            setRand(1, () => {
                 //getList(0);
             });
         } else {
             setRandTitle("NFT Number");
-            setRand(1, () => {
+            setRand(0, () => {
                 //getList(0);
             });
         }
@@ -120,8 +120,8 @@ function OwnerListMain() {
                 <div className="center_short">
                     <label className="form-label">Order by:</label>
                     <select className="form-select" onChange={(e) => test(e)} aria-label="Default select example">
-                        <option selected value="1">Random</option>
-                        <option value="0">NFT Number</option>
+                        <option selected={randTitle==='Random'?true:false} value="1">Random</option>
+                        <option selected={randTitle!=='Random'?true:false} value="0">NFT Number</option>
                     </select>
                 </div>
             </div>
@@ -169,7 +169,9 @@ function OwnerListMain() {
                                                     ))}
                                                 </tbody>
                                             </table>
-                                            <nav aria-label="Page navigation example">
+                                      
+                                        </div>
+                                        <nav aria-label="Page navigation example">
                                                 <ul className="pagination">
                                                     {page !== 0 && (
                                                         <li className="page-item"><a className="page-link" href="/#/OwnerList" onClick={() => retrievePage(0)}>First</a></li>
@@ -186,7 +188,6 @@ function OwnerListMain() {
                                                     )}
                                                 </ul>
                                             </nav>
-                                        </div>
                                     </div>
 
                                     <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">

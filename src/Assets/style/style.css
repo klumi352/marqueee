@@ -122,6 +122,7 @@ body{
     display: inline-block;
     border-radius: 25px;
     box-shadow: 0px 5px 7px #0000004d;
+    cursor: pointer;
 }
 .btn_banner:hover{
     background: rgb(11,135,237);

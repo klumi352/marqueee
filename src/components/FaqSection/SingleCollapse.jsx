@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SingleCollapse({ id, title, discription, ishow }) {
+function SingleCollapse({ id, title, discription, ishow,databsparent }) {
     return (
         <>
             <div className="accordion-item">
@@ -9,7 +9,7 @@ function SingleCollapse({ id, title, discription, ishow }) {
                         {title}
                     </button>
                 </h2>
-                <div id={`flush-collapse${id}`} className={`accordion-collapse collapse ${ishow?'show':null}`} aria-labelledby={`flush-heading${id}`} data-bs-parent="#accordionFlushExample">
+                <div id={`flush-collapse${id}`} className={`accordion-collapse collapse ${ishow?'show':null}`} aria-labelledby={`flush-heading${id}`} data-bs-parent={`#${databsparent}`}>
                     <div className="accordion-body" dangerouslySetInnerHTML={{ __html: discription }}></div>
                 </div>
             </div>

@@ -49,10 +49,10 @@ const Purchase = () => {
   }, []);
 
   let start = (page - 2 <= 0) ? 0 : page - 2;
-  let end = (page + 2 > NUM_PAGES - 1) ? NUM_PAGES - 1 : start + 4;
+  let end = (page + 2 > NUM_PAGES - 1) ? NUM_PAGES - 1 : start + 2;
   let rows = [];
   for (let i = start; i <= end; i++) {
-    rows.push(<li key={i} className="page-item"><a className="page-link"  onClick={() => retrievePage(i)}>{(i + 1)}</a></li>);
+    rows.push(<li key={i} className="page-item"><a className="page-link" onClick={() => retrievePage(i)}>{(i + 1)}</a></li>);
   }
 
   return (
@@ -67,75 +67,79 @@ const Purchase = () => {
             <>
               <Heading as='h4' size='md'>Van Gogh's Starry Night Edition MM NFTs</Heading>
               <br />
-              <nav aria-label="Page navigation example">
-                <ul className="pagination">
-                  {page !== 0 && (
-                    <li className="page-item"><a className="page-link"  onClick={() => retrievePage(0)}>First</a></li>
-                  )}
-                  {page > 0 && (
-                    <li className="page-item"><a className="page-link"  onClick={() => retrievePage(page - 1)}>Previous</a></li>
-                  )}
-                  {rows}
-                  {page !== NUM_PAGES - 1 && (
-                    <>
-                      <li className="page-item"><a className="page-link"  onClick={() => retrievePage(page + 1)}>Next</a></li>
-                      <li className="page-item"><a className="page-link"  onClick={() => retrievePage(NUM_PAGES - 1)}>Last</a></li>
-                    </>
-                  )}
-                </ul> Page: {page + 1}
-              </nav>
+              <div className='container page-link-center'>
+                <nav aria-label="Page navigation example">
+                  <ul className="pagination">
+                    {page !== 0 && (
+                      <li className="page-item"><a className="page-link" onClick={() => retrievePage(0)}>First</a></li>
+                    )}
+                    {page > 0 && (
+                      <li className="page-item"><a className="page-link" onClick={() => retrievePage(page - 1)}>Previous</a></li>
+                    )}
+                    {rows}
+                    {page !== NUM_PAGES - 1 && (
+                      <>
+                        <li className="page-item"><a className="page-link" onClick={() => retrievePage(page + 1)}>Next</a></li>
+                        <li className="page-item"><a className="page-link" onClick={() => retrievePage(NUM_PAGES - 1)}>Last</a></li>
+                      </>
+                    )}
+                  </ul> Page: {page + 1}
+                </nav>
+              </div>
               <br />
               <div className="container table-responsive">
-              <table className="table nft_table">
-                <TableHeader />
-                <tbody>
-                  {assets.map((asset, i) => (
-                    <tr key={i}>
-                      {asset.traits.map((trait, j) => (
-                        <>
-                          {trait.trait_type.toLowerCase() === "editionnumber" && (
-                            <>
-                              <th scope="row" key={'en' + j}>{trait.value}</th>
-                            </>
-                          )}
-                        </>
-                      ))}
-                      <td><img src={asset.image_thumbnail_url} /></td>
-                      <td>{asset.name}</td>
+                <table className="table nft_table">
+                  <TableHeader />
+                  <tbody>
+                    {assets.map((asset, i) => (
+                      <tr key={i}>
+                        {asset.traits.map((trait, j) => (
+                          <>
+                            {trait.trait_type.toLowerCase() === "editionnumber" && (
+                              <>
+                                <th scope="row" key={'en' + j}>{trait.value}</th>
+                              </>
+                            )}
+                          </>
+                        ))}
+                        <td><img src={asset.image_thumbnail_url} /></td>
+                        <td>{asset.name}</td>
 
-                      {asset.traits.map((trait, k) => (
-                        <>
-                          {trait.trait_type.toLowerCase() === "colorhexcode" && (
-                            <>
-                              <td key={'chc' + k}>
-                                <div className="nft_color_main">
-                                  <div className="nft_color" style={{ background: trait.value }}></div>&emsp;
-                                  {trait.value}
-                                </div>
-                              </td>
-                            </>
-                          )}
-                        </>
-                      ))}
-                      <td><Tooltip label={asset.token_id} placement="right">{truncateAddress(asset.token_id)}</Tooltip></td>
-                      <td><a className="btn_visit" onClick={() => window.open(asset.permalink)}>Purchase</a></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                        {asset.traits.map((trait, k) => (
+                          <>
+                            {trait.trait_type.toLowerCase() === "colorhexcode" && (
+                              <>
+                                <td key={'chc' + k}>
+                                  <div className="nft_color_main">
+                                    <div className="nft_color" style={{ background: trait.value }}></div>&emsp;
+                                    {trait.value}
+                                  </div>
+                                </td>
+                              </>
+                            )}
+                          </>
+                        ))}
+                        <td><Tooltip label={asset.token_id} placement="right">{truncateAddress(asset.token_id)}</Tooltip></td>
+                        <td><a className="btn_visit" onClick={() => window.open(asset.permalink)}>Purchase</a></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className='container page-link-center'>
               <nav aria-label="Page navigation example">
                 <ul className="pagination">
                   {page !== 0 && (
-                    <li className="page-item"><a className="page-link"  onClick={() => retrievePage(0)}>First</a></li>
+                    <li className="page-item"><a className="page-link" onClick={() => retrievePage(0)}>First</a></li>
                   )}
                   {page > 0 && (
-                    <li className="page-item"><a className="page-link"  onClick={() => retrievePage(page - 1)}>Previous</a></li>
+                    <li className="page-item"><a className="page-link" onClick={() => retrievePage(page - 1)}>Previous</a></li>
                   )}
                   {rows}
                   {page !== NUM_PAGES - 1 && (
                     <>
-                      <li className="page-item"><a className="page-link"  onClick={() => retrievePage(page + 1)}>Next</a></li>
-                      <li className="page-item"><a className="page-link"  onClick={() => retrievePage(NUM_PAGES - 1)}>Last</a></li>
+                      <li className="page-item"><a className="page-link" onClick={() => retrievePage(page + 1)}>Next</a></li>
+                      <li className="page-item"><a className="page-link" onClick={() => retrievePage(NUM_PAGES - 1)}>Last</a></li>
                     </>
                   )}
                 </ul> Page: {page + 1}

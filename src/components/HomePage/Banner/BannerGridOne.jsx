@@ -426,7 +426,7 @@ function BannerGridOne() {
                       <StatefulToolTip parent={ grid } position="left" arrow="bottom" tooltipTimeout="2000">
                         <div className="tooltip-row">
                           <div className="tooltip-column">
-                            <a href="#" onClick={(e) => visitSite(e, id, url)}><img src={process.env.REACT_APP_MARQUEE_URL + "/api/banner_image.php?token_id=" + token_id + "&type=thumb"} /></a>
+                            <a href="#" onClick={(e) => visitSite(e, id, url)}><img src={process.env.REACT_APP_MARQUEE_URL + "/api/banner_image.php?token_id=" + token_id + "&type=square"} /></a>
                           </div>
                           <div className="tooltip-column">
                             <p><b>{title}</b></p>

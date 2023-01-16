@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import Logo from '../../Assets/images/logo/logo_footer.svg'
 import { menu } from '../../data/menu'
 import LogoMain from '../Logo/LogoMain'
@@ -10,7 +10,7 @@ function NavMobile() {
             <div className="offcanvas offcanvas-end bsr_SideBar" tabindex="-1" id="offcanvasRight"
                 aria-labelledby="offcanvasRightLabel">
                 <div className="offcanvas-header">
-                    <LogoMain addclassName={'footer_logo'} image={Logo} />
+                    <HashLink to={'/#'}><LogoMain addclassName={'footer_logo'} image={Logo} /></HashLink>
                     <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div className="offcanvas-body">

@@ -180,16 +180,19 @@ const OwnerNFTList = (props) => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <nav aria-label="Page navigation example">
+                                        <div className='container page-link-center'>
+                                            <nav aria-label="Page navigation example">
                                             <ul className="pagination">
                                                 {previous && (
-                                                    <li className="page-item"><a className="page-link" href="/#/Dashboard" onClick={() => retrievePage(previous)}>Previous</a></li>
+                                                    <li className="page-item"><a className="page-link" onClick={() => retrievePage(previous)}>Previous</a></li>
                                                 )}
                                                 {next && (
-                                                    <li className="page-item"><a className="page-link" href="/#/Dashboard" onClick={() => retrievePage(next)}>Next</a></li>
+                                                    <li className="page-item"><a className="page-link"  onClick={() => retrievePage(next)}>Next</a></li>
                                                 )}
                                             </ul>
                                         </nav>
+                                        </div>
+                                        
                                     </>
                                 ) : (
                                     <>

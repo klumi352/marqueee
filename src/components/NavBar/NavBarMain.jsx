@@ -8,6 +8,7 @@ import '../../Assets/style/reponsive.css'
 import NavLinkMenu from './NavLinkMenu'
 import { useEffect } from 'react'
 import $ from 'jquery'
+import { HashLink } from 'react-router-hash-link';
 function NavBarMain() {
     useEffect(()=>{
         $(function () {
@@ -20,10 +21,10 @@ function NavBarMain() {
     return (
         <nav class="navbar navbar-expand-lg fixed-top navbar-fixed-top">
             <div class="container">
-                <Link to={'/'} class="navbar-brand">
+                <HashLink to={'/#'} class="navbar-brand">
                     <LogoMain image={Logo} />
                     <p class="logo_slogan">Your key to advertising</p>
-                </Link>
+                </HashLink>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                     aria-controls="offcanvasRight">
