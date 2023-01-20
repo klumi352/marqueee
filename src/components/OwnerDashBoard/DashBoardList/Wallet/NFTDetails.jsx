@@ -528,7 +528,7 @@ const NFTDetails = (props) => {
                       >
                         <VStack>
                           <Heading as='h4' size='md'>Vote</Heading>
-                          <Text fontSize='xs'>Occasionally, Marquee.Market NFT owners will be able to vote here for new features on Marquee.Market. All Marquee.Market NFT owners will be notified via e-mail everytime a vote takes place. Want to see a new feature here on Marquee.Market? Post a topic about it at the <a href="/#/Forum">NFT Owner Forum</a>. If your fellow Marquee.Market NFT owners like it, we'll start a new voting poll here.</Text>
+                          <Text fontSize='xs'>Occasionally, Marquee.Market NFT owners will be able to vote here for new features on Marquee.Market. All Marquee.Market NFT owners will be notified via e-mail everytime a vote takes place. Want to see a new feature here on Marquee.Market? Post a topic about it at the <a href="/Forum">NFT Owner Forum</a>. If your fellow Marquee.Market NFT owners like it, we'll start a new voting poll here.</Text>
                         </VStack>
                       </Box>
                     </TabPanel>

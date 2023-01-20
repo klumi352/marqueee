@@ -185,7 +185,7 @@ const Forum = (props) => {
             {(location.pathname == '/Forum') && isForumUser ? (
               <>
                 <ButtonGroup variant='outline' spacing='6' padding='10px'>
-                  <Button colorScheme='blue' loadingText='Submitting' onClick={event =>  window.location.href='/#/Forum/Edit'}>Edit Forum Profile</Button>
+                  <Button colorScheme='blue' loadingText='Submitting' onClick={event =>  window.location.href='/Forum/Edit'}>Edit Forum Profile</Button>
                 </ButtonGroup>
                 <iframe src={process.env.REACT_APP_MARQUEE_URL + "/forum/preview.php?tid=" + tid + "&name=" + name + "&email=" + email + "&owner=" + props.account + "&signature=" + props.signature + "&message=" + props.message + "&signedMessage=" + props.signedMessage} frameBorder="0" width="100%" height="750px"></iframe>
               </>
@@ -255,7 +255,7 @@ const Forum = (props) => {
                     {isForumUser && (
                       <>
                         <ButtonGroup variant='outline' spacing='6' padding='10px'>
-                          <Button colorScheme='blue' loadingText='Submitting' onClick={event =>  window.location.href='/#/Forum'}>Go to Forum</Button>
+                          <Button colorScheme='blue' loadingText='Submitting' onClick={event =>  window.location.href='/Forum'}>Go to Forum</Button>
                         </ButtonGroup>
                       </>
                     )}
